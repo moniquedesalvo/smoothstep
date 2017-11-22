@@ -49,17 +49,13 @@ function goToPreviousImg () {
 		var lightboxImage = lightboxImages[i];
 		if (currentImage === lightboxImage) {
 			if (lightboxImages[i - 1] === undefined) {
-				lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + lightboxImages[lightboxImages.length - 1].getAttribute("src") + "></div>";
 				prevImg = lightboxImages[lightboxImages.length - 1];
 			} else {
-				lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + lightboxImages[i - 1].getAttribute("src") + "></div>";
 				prevImg = lightboxImages[i - 1];
 			}
 		} 
 	}
-	currentImage = prevImg;
-	addOverlayLeftEl();
-	addOverlayRightEl();
+	activateLightbox(prevImg);
 }
 
 function goToNextImg (currentImg) {
@@ -68,66 +64,44 @@ function goToNextImg (currentImg) {
 		var lightboxImage = lightboxImages[i];
 		if (currentImage === lightboxImage) {
 			if (lightboxImages[i + 1] === undefined) {
-				lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + lightboxImages[0].getAttribute("src") + "></div>";
 				nextImg = lightboxImages[0];
 			} else {
-				lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + lightboxImages[i + 1].getAttribute("src") + "></div>";
 				nextImg = lightboxImages[i + 1];
 			}
 		}
 	}
-	currentImage = nextImg;
-	addOverlayLeftEl();
-	addOverlayRightEl();
+	activateLightbox(nextImg);
 }
 
-function backgroundWasClicked (e) {
+function deactivateLightbox (e) {
 	var el = e.target;
-	if (el.matches("#lightbox")) {
+	var keyCode = e.keyCode;
+	if (el.matches("#lightbox") || keyCode === 27) {
 		lightboxEl.style.display = "none";
 		overlayLeftEl.style.visibility = "hidden";
 		overlayRightEl.style.visibility = "hidden";
 	}
 }
 
-document.addEventListener("click", backgroundWasClicked);
+document.addEventListener("click", deactivateLightbox);
 
-function leftArrowWasPressed (e) {
-	var keyName = e.key;
-	if (keyName === "ArrowLeft") {
+document.addEventListener("keydown", deactivateLightbox);
+
+
+function keyWasPressed (e) {
+	var keyCode = e.keyCode;
+	if (keyCode === 37 && lightboxEl.style.display === "block") {
 		goToPreviousImg();
+	} else if (keyCode === 39 && lightboxEl.style.display === "block") {
+		goToNextImg();
 	}
 } 
 
-document.addEventListener("keydown", leftArrowWasPressed);
+document.addEventListener("keydown", keyWasPressed);
 
-function rightArrowWasPressed (e) {
-	var keyName = e.key;
-	if (keyName === "ArrowRight" && lightboxEl.style.display === "block" ) {
-		goToNextImg();
-	}
-}
+overlayLeftEl.addEventListener("click", goToPreviousImg);
 
-document.addEventListener("keydown", rightArrowWasPressed);
-
-function overlayLeftElWasClicked (e) {
-	var el = e.target;
-	if (el.matches("#overlayLeftEl")) {
-		goToPreviousImg();
-	}
-}
-
-document.addEventListener("click", overlayLeftElWasClicked);
-
-function overlayRightElWasClicked (e) {
-	var el = e.target;
-	if (el.matches("#overlayRightEl")) {
-		goToNextImg();
-	}
-}
-
-document.addEventListener("click", overlayRightElWasClicked);
-
+overlayRightEl.addEventListener("click", goToNextImg);
 
 
 
