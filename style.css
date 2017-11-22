@@ -117,3 +117,9 @@ lightbox
   transform: translate(-50%, -50%);
   border: 4px solid #bbb;
 }
+
+#overlayLeftEl, #overlayRightEl {
+  position: fixed;
+  z-index: 1;
+  cursor: pointer;
+}
