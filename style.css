@@ -36,6 +36,10 @@ Font Faces
   src: url(font/OpenSans-Bold.ttf) format('truetype');
 }
 
+/* ========================================================
+Body
+=========================================================== */
+
 .images {
   text-align: center;
   max-width: 1000px;
@@ -116,6 +120,7 @@ lightbox
   left: 50%;
   transform: translate(-50%, -50%);
   border: 4px solid #bbb;
+  background: black;
 }
 
 #overlayLeftEl, #overlayRightEl {

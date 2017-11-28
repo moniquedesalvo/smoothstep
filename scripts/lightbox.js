@@ -4,36 +4,49 @@ var overlayLeftEl = document.querySelector("#overlayLeftEl");
 var overlayRightEl = document.querySelector("#overlayRightEl");
 var currentImage = null;
 
-
-function imageWasClicked (e) {
+function imageWasClicked(e) {
 	var el = e.target;
 	if (el.matches(".image-row img")) {
 		activateLightbox(el);
 	}
 }
-
 document.addEventListener("click", imageWasClicked);
 
 function activateLightbox(currentImg) {
+	var currentLightboxImg = document.querySelector("#lightboxImg img");
+	var fullSizedImage = removeTn(currentImg.getAttribute("src")); //string
 	lightboxEl.classList.remove("image-row");
 	lightboxEl.style.display = "block";
-	lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + currentImg.getAttribute("src") + "></div>";
+	lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + fullSizedImage + "></div>";
 	currentImage = currentImg;
-	addOverlayLeftEl();
-	addOverlayRightEl();
+	addOverlays();
 }
 
-function addOverlayLeftEl () {
+function removeTn(src) {
+  var beginning = src.match(/[^_]*/);
+  var ending = src.match(/\.(.*)/)[0];
+  return beginning + ending;
+}
+
+function addOverlays() {
+	var currentLightboxImg = document.querySelector("#lightboxImg img");
+	currentLightboxImg.onload = function() {
+		addOverlayLeftEl();
+		addOverlayRightEl();		
+	}
+}
+
+function addOverlayLeftEl() {
 	var currentLightboxImg = document.querySelector("#lightboxImg img");
 	var rect = currentLightboxImg.getBoundingClientRect();
 	overlayLeftEl.style.visibility = "visible";
 	overlayLeftEl.style.left = rect.left + "px";
 	overlayLeftEl.style.top = rect.top + "px";
 	overlayLeftEl.style.width = (rect.width/2) + "px";
-	overlayLeftEl.style.height = rect.height + "px";
+	overlayLeftEl.style.height = rect.height + "px";	
 }
 
-function addOverlayRightEl () {
+function addOverlayRightEl() {
 	var currentLightboxImg = document.querySelector("#lightboxImg img");
 	var rect = currentLightboxImg.getBoundingClientRect();
 	overlayRightEl.style.visibility = "visible";
@@ -43,7 +56,7 @@ function addOverlayRightEl () {
 	overlayRightEl.style.height = rect.height + "px";
 }
 
-function goToPreviousImg () {
+function goToPreviousImg() {
 	var prevImg = null;
 	for (var i = 0; i < lightboxImages.length; i++) {
 		var lightboxImage = lightboxImages[i];
@@ -51,14 +64,14 @@ function goToPreviousImg () {
 			if (lightboxImages[i - 1] === undefined) {
 				prevImg = lightboxImages[lightboxImages.length - 1];
 			} else {
-				prevImg = lightboxImages[i - 1];
-			}
+				prevImg = lightboxImages[i - 1];		}
 		} 
 	}
+	console.log(prevImg, "prev")
 	activateLightbox(prevImg);
 }
 
-function goToNextImg (currentImg) {
+function goToNextImg(currentImg) {
 	var nextImg = null;
 	for (var i = 0; i < lightboxImages.length; i++) {
 		var lightboxImage = lightboxImages[i];
@@ -70,10 +83,11 @@ function goToNextImg (currentImg) {
 			}
 		}
 	}
+	console.log(nextImg, "next")
 	activateLightbox(nextImg);
 }
 
-function deactivateLightbox (e) {
+function deactivateLightbox(e) {
 	var el = e.target;
 	var keyCode = e.keyCode;
 	if (el.matches("#lightbox") || keyCode === 27) {
@@ -88,7 +102,7 @@ document.addEventListener("click", deactivateLightbox);
 document.addEventListener("keydown", deactivateLightbox);
 
 
-function keyWasPressed (e) {
+function keyWasPressed(e) {
 	var keyCode = e.keyCode;
 	if (keyCode === 37 && lightboxEl.style.display === "block") {
 		goToPreviousImg();
