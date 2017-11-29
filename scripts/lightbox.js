@@ -2,6 +2,7 @@ var lightboxImages = document.querySelectorAll(".image-row img");
 var lightboxEl = document.querySelector("#lightbox");
 var overlayLeftEl = document.querySelector("#overlayLeftEl");
 var overlayRightEl = document.querySelector("#overlayRightEl");
+var bodyEl = document.querySelector("body");
 var currentImage = null;
 
 function imageWasClicked(e) {
@@ -15,6 +16,7 @@ document.addEventListener("click", imageWasClicked);
 function activateLightbox(currentImg) {
 	var currentLightboxImg = document.querySelector("#lightboxImg img");
 	var fullSizedImage = removeTn(currentImg.getAttribute("src")); //string
+	bodyEl.classList.add("disableScroll");
 	lightboxEl.classList.remove("image-row");
 	lightboxEl.style.display = "block";
 	lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + fullSizedImage + "></div>";
@@ -67,7 +69,6 @@ function goToPreviousImg() {
 				prevImg = lightboxImages[i - 1];		}
 		} 
 	}
-	console.log(prevImg, "prev")
 	activateLightbox(prevImg);
 }
 
@@ -83,7 +84,6 @@ function goToNextImg(currentImg) {
 			}
 		}
 	}
-	console.log(nextImg, "next")
 	activateLightbox(nextImg);
 }
 
@@ -94,12 +94,18 @@ function deactivateLightbox(e) {
 		lightboxEl.style.display = "none";
 		overlayLeftEl.style.visibility = "hidden";
 		overlayRightEl.style.visibility = "hidden";
+		bodyEl.classList.remove("disableScroll");
 	}
 }
 
 document.addEventListener("click", deactivateLightbox);
 
 document.addEventListener("keydown", deactivateLightbox);
+
+//prevents scrolling when lightbox is activated on mobile
+lightboxEl.addEventListener('touchmove', function(e) {
+	e.preventDefault();
+});
 
 
 function keyWasPressed(e) {
