@@ -71,7 +71,7 @@ Body
 }
 
 .thanks-photo img {
-  max-width: 380px;
+  max-width: 360px;
   margin-top: 80px;
 }
 
@@ -145,16 +145,24 @@ Logo
 #logo-container {
   width: 655px;
   height: 100px;
-  margin: 20% auto;
+  margin: 200px auto;
+}
+
+#logo-container-small {
+  width: 261px;
+  height: 60px;
+  margin: 100px auto 0px;
 }
 
 .knockout {
-  /* Ensure the bottom layer is full screen */
   height: 100%;
   width: 100%;
+  background: -webkit-linear-gradient(left, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
   background: linear-gradient(to right, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
   background-size: 200% 100%;
   animation: gradientLoop 20s infinite linear;
+  -moz-animation: gradientLoop 20s infinite linear;
+  -webkit-animation: gradientLoop 20s infinite linear;
 }
 
 /*left (x) top (y)*/
@@ -163,11 +171,35 @@ Logo
   100%{background-position:100% 00%}
 }
 
+@-webkit-keyframes gradientLoop { 
+  0%{background-position:0% 0%}
+  100%{background-position:100% 00%}
+}
+
+@-moz-keyframes gradientLoop { 
+  0%{background-position:0% 0%}
+  100%{background-position:100% 00%}
+}
 
 text {
   font-family: "Advanced Dot Digital", Helvetica, Arial, sans-serif;
   font-size: 5em;
   text-align: center;
+}
+
+#logo-container-small #knockout-text text {
+  font-size: 2em;
+}
+
+#back-arrow h1 {
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #006883;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* ========================================================
@@ -176,17 +208,22 @@ Media Queries
 
 @media screen and (max-width: 700px) {
   .thanks {
-    flex-direction: column;
+    display: block;
     margin: 0 10px 0 10px;
   }
 
   .thanks-text p {
-    margin-right: 0;
+    margin: 0 auto;
   }
 
-  .thanks img {
-    width: 100%;
+  .thanks-text h3 {
+    text-align: center;
   }
+
+  .thanks .thanks-photo {
+    text-align: center;
+    margin: 0 auto;
+   }
 }
 
 @media screen and (max-width: 1000px) {
