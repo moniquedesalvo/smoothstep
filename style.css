@@ -2,7 +2,8 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 100;
   color: #222;
-  background-color: black;
+  /*background-color: black;
+*/ background: black;
   margin: 0 0 100px 0;
   color: white;
 }
@@ -29,11 +30,19 @@ Font Faces
   font-weight: 100;
   src: url(font/OpenSans-Light.ttf) format('truetype');
 }
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
   src: url(font/OpenSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Advanced Dot Digital';
+  font-style: normal;
+  font-weight: 700;
+  src: url(font/advanced_dot_digital-7.ttf) format('truetype');
 }
 
 /* ========================================================
@@ -131,6 +140,37 @@ lightbox
 }
 
 /* ========================================================
+Logo
+=========================================================== */
+#logo-container {
+  width: 655px;
+  height: 100px;
+  margin: 20% auto;
+}
+
+.knockout {
+  /* Ensure the bottom layer is full screen */
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
+  background-size: 200% 100%;
+  animation: gradientLoop 20s infinite linear;
+}
+
+/*left (x) top (y)*/
+@keyframes gradientLoop { 
+  0%{background-position:0% 0%}
+  100%{background-position:100% 00%}
+}
+
+
+text {
+  font-family: "Advanced Dot Digital", Helvetica, Arial, sans-serif;
+  font-size: 5em;
+  text-align: center;
+}
+
+/* ========================================================
 Media Queries
 =========================================================== */
 
@@ -138,6 +178,10 @@ Media Queries
   .thanks {
     flex-direction: column;
     margin: 0 10px 0 10px;
+  }
+
+  .thanks-text p {
+    margin-right: 0;
   }
 
   .thanks img {
