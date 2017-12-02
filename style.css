@@ -144,19 +144,18 @@ Logo
 =========================================================== */
 #logo-container {
   width: 100%;
-  height: auto;
   margin: 200px auto;
 }
 
 #logo-container-small {
   max-width: 400px;
-  height: auto;
   margin: 100px auto 0px;
 }
 
 .knockout {
   width: 100%;
-  height: auto;
+}
+.knockout {
   background: -webkit-linear-gradient(left, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
   background: linear-gradient(to right, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
   background-size: 200% 100%;
@@ -164,10 +163,12 @@ Logo
   -moz-animation: gradientLoop 20s infinite linear;
   -webkit-animation: gradientLoop 20s infinite linear;
 }
+.knockout svg {
+  transform: scale(1.03);
+}
 
 svg {
   width: 100%;
-  height: auto;
 }
 
 /*left (x) top (y)*/
@@ -188,7 +189,7 @@ svg {
 
 text {
   font-family: "Advanced Dot Digital", Helvetica, Arial, sans-serif;
-  font-size: 5em;
+  font-size: 70px;
 }
 
 /* ========================================================
