@@ -143,26 +143,31 @@ lightbox
 Logo
 =========================================================== */
 #logo-container {
-  width: 655px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   margin: 200px auto;
 }
 
 #logo-container-small {
-  width: 261px;
-  height: 60px;
+  max-width: 400px;
+  height: auto;
   margin: 100px auto 0px;
 }
 
 .knockout {
-  height: 100%;
   width: 100%;
+  height: auto;
   background: -webkit-linear-gradient(left, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
   background: linear-gradient(to right, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
   background-size: 200% 100%;
   animation: gradientLoop 20s infinite linear;
   -moz-animation: gradientLoop 20s infinite linear;
   -webkit-animation: gradientLoop 20s infinite linear;
+}
+
+svg {
+  width: 100%;
+  height: auto;
 }
 
 /*left (x) top (y)*/
@@ -184,22 +189,6 @@ Logo
 text {
   font-family: "Advanced Dot Digital", Helvetica, Arial, sans-serif;
   font-size: 5em;
-  text-align: center;
-}
-
-#logo-container-small #knockout-text text {
-  font-size: 2em;
-}
-
-#back-arrow h1 {
-  margin-top: 0;
-  margin-bottom: 50px;
-  text-align: center;
-  color: #006883;
-}
-
-a {
-  text-decoration: none;
 }
 
 /* ========================================================
