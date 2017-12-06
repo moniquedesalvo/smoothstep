@@ -105,6 +105,10 @@ Body
   margin-top: 100px;
 }
 
+.index {
+  margin-bottom: 100px;
+}
+
 /* ========================================================
 resize-image-rows.js styles 
 =========================================================== */
@@ -218,6 +222,7 @@ Cards
 #card-container {
   max-width: 700px;
   margin: 0 auto;
+  padding-bottom: -100px;
 }
 
 .card {
@@ -237,6 +242,10 @@ Cards
 .caption-index {
   color: #bbb;
   padding-bottom: 50px;
+}
+
+#index {
+  margin-bottom: 0;
 }
 
 /* ========================================================
