@@ -5,17 +5,19 @@ var overlayRightEl = document.querySelector("#overlayRightEl");
 var bodyEl = document.querySelector("body");
 var currentImage = null;
 
-function imageWasClicked(e) {
-	var el = e.target;
-	if (el.matches(".image-row img")) {
-		activateLightbox(el);
-	}
+var preloadedImages = {}; // url -> imgEl\\
+
+for (var i = 0; i < lightboxImages.length; i++) {
+ 	var lightboxImage = lightboxImages[i];
+	var url = removeTn(lightboxImage.getAttribute("src"));
+	var imageEl = document.createElement("img");
+	imageEl.setAttribute("src", url)
+	preloadedImages[url] = imageEl;
 }
-document.addEventListener("click", imageWasClicked);
 
 function activateLightbox(currentImg) {
-	var currentLightboxImg = document.querySelector("#lightboxImg img");
-	var fullSizedImage = removeTn(currentImg.getAttribute("src")); //string
+	console.log(currentImg)
+	var fullSizedImage = removeTn(currentImg.getAttribute("src")); 
 	bodyEl.classList.add("disableScroll");
 	lightboxEl.classList.remove("image-row");
 	lightboxEl.style.display = "block";
@@ -23,6 +25,14 @@ function activateLightbox(currentImg) {
 	currentImage = currentImg;
 	addOverlays();
 }
+
+function imageWasClicked(e) {
+	var el = e.target;
+	if (el.matches(".image-row img")) {
+		activateLightbox(el);
+	}
+}
+document.addEventListener("click", imageWasClicked);
 
 function removeTn(src) {
   var beginning = src.match(/[^_]*/);
