@@ -16,12 +16,12 @@ for (var i = 0; i < lightboxImages.length; i++) {
 }
 
 function activateLightbox(currentImg) {
-	console.log(currentImg)
 	var fullSizedImage = removeTn(currentImg.getAttribute("src")); 
 	bodyEl.classList.add("disableScroll");
 	lightboxEl.classList.remove("image-row");
 	lightboxEl.style.display = "block";
-	lightboxEl.innerHTML = "<div id='lightboxImg'><img src=" + fullSizedImage + "></div>";
+	lightboxEl.innerHTML = "<div id='lightboxImg'></div>";
+	lightboxEl.querySelector("#lightboxImg").appendChild(preloadedImages[fullSizedImage]);
 	currentImage = currentImg;
 	addOverlays();
 }
@@ -42,11 +42,11 @@ function removeTn(src) {
 
 function addOverlays() {
 	var currentLightboxImg = document.querySelector("#lightboxImg img");
-	currentLightboxImg.onload = function() {
-		addOverlayLeftEl();
-		addOverlayRightEl();		
-	}
+	addOverlayLeftEl();
+	addOverlayRightEl();		
 }
+
+window.addEventListener("resize", addOverlays);
 
 function addOverlayLeftEl() {
 	var currentLightboxImg = document.querySelector("#lightboxImg img");
