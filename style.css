@@ -75,15 +75,18 @@ Body
 .thanks {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 10px 0 10px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   line-height: 1.8em; 
+  box-sizing: border-box;
 }
 
 .thanks-photo img {
   max-width: 360px;
   margin-top: 80px;
+  border-radius: 10px;
 }
 
 .thanks-text h3 {
@@ -227,8 +230,9 @@ Cards
 
 .card {
   max-width: 700px;
-  max-height: 500px;
+  max-height: 480px;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .card img {
@@ -280,9 +284,20 @@ Media Queries
 =========================================================== */
 
 @media screen and (max-width: 700px) {
+  .card {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
   .thanks {
     display: block;
     margin: 0 10px 0 10px;
+    padding: 0;
+  }
+
+  .thanks-photo img {
+    max-width: 378px;
+    margin-top: 20px;
   }
 
   .thanks-text p {
@@ -290,7 +305,7 @@ Media Queries
   }
 
   .thanks-text h3 {
-    text-align: center;
+    text-align: left;
   }
 
   .thanks .thanks-photo {
