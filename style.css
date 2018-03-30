@@ -296,7 +296,7 @@ Media Queries
   }
 
   .thanks-photo img {
-    max-width: 360px;
+    max-width: 300px;
     margin-top: 20px;
   }
 
@@ -309,7 +309,7 @@ Media Queries
   }
 
   .thanks .thanks-photo {
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
    }
 
