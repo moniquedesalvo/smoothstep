@@ -75,7 +75,7 @@ Body
 .thanks {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 10px 0 10px;
+  padding: 0 5px 0 5px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -301,7 +301,8 @@ Media Queries
   }
 
   .thanks-text p {
-    margin: 0 auto;
+/*    margin: 0 auto;
+*/    text-align: left;
   }
 
   .thanks-text h3 {
