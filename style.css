@@ -291,26 +291,28 @@ Media Queries
 
   .thanks {
     display: block;
-    margin: 0 10px 0 10px;
+    margin: 0 auto;
     padding: 0;
+    text-align: center;
+    max-width: 95%;
+    box-sizing: border-box;
   }
 
   .thanks-photo img {
-    max-width: 300px;
-    margin-top: 20px;
+    max-width: 360px;
+    margin: 20 auto 0 auto;
   }
 
   .thanks-text p {
-/*    margin: 0 auto;
-*/    text-align: left;
+    text-align: left;
+    margin: 10px auto 10px auto;
   }
 
   .thanks-text h3 {
-    text-align: left;
+    margin: 80px auto 20px auto;
   }
 
   .thanks .thanks-photo {
-    text-align: left;
     margin: 0 auto;
    }
 
