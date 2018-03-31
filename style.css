@@ -302,14 +302,14 @@ Media Queries
   .thanks .thanks-photo {
     margin: 0 auto;
    }
-
-  .iframe-container-16x9 {
-    padding-bottom: 100%;
-  }
   
   .video {
     margin-top: 0;
     margin-bottom: -50px;
+  }
+
+  .single-image {
+    margin-top: 50px;
   }
   
   video {
