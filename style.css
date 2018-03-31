@@ -105,7 +105,7 @@ Body
 }
 
 .no-cover {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .index {
@@ -253,30 +253,17 @@ Cards
 }
 
 /* ========================================================
-iframe
+video
 =========================================================== */
 .video {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
-#iframe-container {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-}
-
-/* 16x9 Aspect Ratio */
-.iframe-container-16x9 {
-  padding-bottom: 40%;
-}
-
-#iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+video {
+  margin: 0 auto;
+  width: 500px;
+  border-radius: 10px;
 }
 
 /* ========================================================
@@ -305,7 +292,7 @@ Media Queries
 
   .thanks-text p {
     text-align: left;
-    margin: 10px auto 10px auto;
+    margin: 20px auto 20px auto;
   }
 
   .thanks-text h3 {
@@ -324,6 +311,10 @@ Media Queries
     margin-top: 0;
     margin-bottom: -50px;
   }
+  
+  video {
+    width: 100%;
+   }
 }
 
 @media screen and (max-width: 1000px) {
