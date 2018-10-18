@@ -54,7 +54,7 @@ Nav
 nav {
   text-align: right;
   padding: 10px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 nav a {
@@ -81,7 +81,7 @@ nav .logo-nav a {
   }
   nav {
     padding: 10px 0;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
