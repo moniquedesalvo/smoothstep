@@ -68,16 +68,20 @@ nav a:hover {
 .logo-nav {
   width: 230px;
   float: left;
-  margin: -29px 0 -29px -10px;
+  margin-top: -4px;
+}
+nav .logo-nav a {
+  padding: 0;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
   .logo-nav {
     width: 180px;
-    margin: -24px 0 -24px 0;
+    margin-top: -2px;
   }
   nav {
-    padding: 10px 0px;
+    padding: 10px 0;
+    font-size: 16px;
   }
 }
 
@@ -236,7 +240,7 @@ Logo
   -webkit-animation: gradientLoop 4s infinite linear;
 }
 .knockout svg {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 svg {
