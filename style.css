@@ -112,6 +112,17 @@ Body
   margin-bottom: 100px;
 }
 
+.text p {
+  max-width: 600px;
+  margin: 20px auto;
+  color: #bbb;
+}
+
+p.faq-question {
+  font-style: italic;
+  color: #fff;
+}
+
 /* ========================================================
 resize-image-rows.js styles 
 =========================================================== */
