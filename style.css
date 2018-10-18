@@ -7,6 +7,11 @@ body {
   color: #bbb;
 }
 
+a {
+  text-decoration: none;
+  color: #f09;
+}
+
 /* ========================================================
 Header
 =========================================================== */
@@ -42,6 +47,40 @@ Font Faces
   font-style: normal;
   font-weight: 700;
   src: url(font/advanced_dot_digital-7.ttf) format('truetype');
+}
+
+/* ========================================================
+Nav
+=========================================================== */
+
+nav {
+  text-align: right;
+  padding: 10px;
+  font-size: 18px;
+}
+
+nav a {
+  color: #fff;
+  padding-right: 10px;
+}
+nav a:hover {
+  color: #f09;
+}
+
+.logo-nav {
+  width: 230px;
+  float: left;
+  margin: -29px 0 -29px -10px;
+}
+
+@media screen and (max-width: 350px) {
+  .logo-nav {
+    width: 180px;
+    margin: -24px 0 -24px 0;
+  }
+  nav {
+    padding: 10px 0px;
+  }
 }
 
 /* ========================================================
@@ -112,6 +151,10 @@ Body
   margin-bottom: 100px;
 }
 
+.text {
+  margin: 0 10px;
+}
+
 .text p {
   max-width: 600px;
   margin: 20px auto;
@@ -178,7 +221,7 @@ Logo
 =========================================================== */
 #logo-container {
   max-width: 700px;
-  margin: 100px auto;
+  margin: 40px auto;
 }
 
 #logo-container-small {
@@ -190,12 +233,12 @@ Logo
   width: 100%;
 }
 .knockout {
-  background: -webkit-linear-gradient(left, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
-  background: linear-gradient(to right, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141, #f37735, #ffc425, #00b159, #00aedb, #663299, #d11141);
+  background: -webkit-linear-gradient(left, #d11141, #f37735, #ffc425, #00b159, #00aedb, #ab66ef, #d11141, #f37735, #ffc425, #00b159, #00aedb, #ab66ef, #d11141);
+  background: linear-gradient(to right, #d11141, #f37735, #ffc425, #00b159, #00aedb, #ab66ef, #d11141, #f37735, #ffc425, #00b159, #00aedb, #ab66ef, #d11141);
   background-size: 200% 100%;
-  animation: gradientLoop 20s infinite linear;
-  -moz-animation: gradientLoop 20s infinite linear;
-  -webkit-animation: gradientLoop 20s infinite linear;
+  animation: gradientLoop 4s infinite linear;
+  -moz-animation: gradientLoop 4s infinite linear;
+  -webkit-animation: gradientLoop 4s infinite linear;
 }
 .knockout svg {
   transform: scale(1.03);
@@ -226,9 +269,6 @@ text {
   font-size: 70px;
 }
 
-a {
-  text-decoration: none;
-}
 
 /* ========================================================
 Cards
@@ -256,7 +296,7 @@ Cards
 
 .caption-index {
   color: #bbb;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 #index {
