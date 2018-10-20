@@ -35,9 +35,7 @@ function imageWasClicked(e) {
 document.addEventListener("click", imageWasClicked);
 
 function removeTn(src) {
-  var beginning = src.match(/[^_]*/);
-  var ending = src.match(/\.(.*)/)[0];
-  return beginning + ending;
+  return src.replace("_tn", "");
 }
 
 function addOverlays() {
