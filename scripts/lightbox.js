@@ -16,11 +16,16 @@ for (var i = 0; i < lightboxImages.length; i++) {
 }
 
 function activateLightbox(currentImg) {
-	var fullSizedImage = removeTn(currentImg.getAttribute("src")); 
+	var fullSizedImage = removeTn(currentImg.getAttribute("src"));
+	var photoCredit = currentImg.getAttribute("data-credit");
 	bodyEl.classList.add("disableScroll");
 	lightboxEl.classList.remove("image-row");
 	lightboxEl.style.display = "block";
-	lightboxEl.innerHTML = "<div id='lightboxImg'></div>";
+	if (photoCredit === null) {
+		lightboxEl.innerHTML = "<div id='lightboxImg'></div>";
+	} else {
+		lightboxEl.innerHTML = "<div id='lightboxImg'></div> <div id='photo-credit'>" + photoCredit + "</div>";
+	}
 	lightboxEl.querySelector("#lightboxImg").appendChild(preloadedImages[fullSizedImage]);
 	currentImage = currentImg;
 	addOverlays();
