@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemap scheme="2.1">
+  <title>smoothstep</title>
+  <version>1.0</version>
+  <link>https://smoothstep.slickplan.com/lp9ndpdz6</link>
+  <pubDate>Mon, 22 Oct 2018 15:51:23 -0400</pubDate>
+  <settings>
+    <language>en_US</language>
+  </settings>
+  <section id="svgmainsection">
+    <options>
+      <template>horizontal</template>
+      <color_scheme>default</color_scheme>
+      <design>flat</design>
+      <id>svgmainsection</id>
+    </options>
+    <cells>
+      <cell id="svgltfg4le3eblrq8n9">
+        <level>home</level>
+        <order>1000</order>
+        <text>http://smoothstep.net/</text>
+      </cell>
+      <cell id="svgpw3n73rszfhvz5m6">
+        <level>1</level>
+        <order>1000</order>
+        <text>http://smoothstep.net/about/</text>
+      </cell>
+      <cell id="svgx84jk3ka57f0o22i">
+        <level>1</level>
+        <order>2000</order>
+        <text>http://smoothstep.net/faq/</text>
+      </cell>
+      <cell id="svgh7061f5ne1qur0b5">
+        <level>1</level>
+        <order>3000</order>
+        <text>http://smoothstep.net/crystalcampfire/</text>
+      </cell>
+      <cell id="svgtygi08rfrprmv2tm">
+        <level>1</level>
+        <order>4000</order>
+        <text>http://smoothstep.net/pagoda/</text>
+      </cell>
+      <cell id="svgpt2zqq0agbaroehr">
+        <level>1</level>
+        <order>5000</order>
+        <text>http://smoothstep.net/chandelier/</text>
+      </cell>
+      <cell id="svgghhmgzp2t7e8bete">
+        <order>6000</order>
+        <text>http://smoothstep.net/mobile/</text>
+        <level>1</level>
+      </cell>
+      <cell id="svgsg7uxd45lcq0iukd">
+        <level>1</level>
+        <order>7000</order>
+        <text>http://smoothstep.net/catpuzzle/</text>
+      </cell>
+      <cell id="svglydkgu5mue8mvf8z">
+        <level>1</level>
+        <order>8000</order>
+        <text>http://smoothstep.net/medals/</text>
+      </cell>
+    </cells>
+  </section>
+</sitemap>
