@@ -112,6 +112,10 @@ Body
   padding-top: 50px;
 }
 
+#crystal-houseplant img {
+  max-width: 500px;
+}
+
 .caption p {
   max-width: 1000px;
   margin: 20px auto;
@@ -170,9 +174,7 @@ p.faq-question {
   color: #fff;
 }
 
-#crystal-houseplant {
-  max-width: 500px;
-}
+
 
 /* ========================================================
 Hero

@@ -1,1 +1,1 @@
-python -m SimpleHTTPServer
+To run locally: python -m SimpleHTTPServer
