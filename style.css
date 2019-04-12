@@ -170,6 +170,10 @@ p.faq-question {
   color: #fff;
 }
 
+#crystal-houseplant {
+  max-width: 500px
+}
+
 /* ========================================================
 Hero
 =========================================================== */
@@ -298,20 +302,21 @@ text {
 Cards
 =========================================================== */
 #card-container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding-bottom: -100px;
 }
 
 .card {
-/*  max-width: 600px;
-  max-height: 100%;
-  overflow: hidden;*/
+  overflow: hidden;
+}
+
+.card #potted-crystal {
+  max-height: 800px;
 }
 
 .card img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
   box-sizing: border-box;
   display: block;
   margin: 0 auto;
