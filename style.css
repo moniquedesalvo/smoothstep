@@ -304,21 +304,22 @@ text {
 Cards
 =========================================================== */
 #card-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding-bottom: -100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.card {
+.card-image {
+  width: 500px;
+  height: 250px;
   overflow: hidden;
 }
 
-.card #potted-crystal {
-  max-height: 800px;
-}
-
 .card img {
-  width: 100%;
+  width: 400px;
   box-sizing: border-box;
   display: block;
   margin: 0 auto;
@@ -366,11 +367,44 @@ footer {
 /* ========================================================
 Media Queries
 =========================================================== */
+@media screen and (max-width: 1000px) {
+  .caption {
+    margin: 0 10px 0 10px;
+  }
+
+  #card-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .card-image {
+    width: 80%;
+    height: 450px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .card-image img {
+    margin: 10px;
+  }
+}
 
 @media screen and (max-width: 700px) {
-  .card {
-    margin-left: 20px;
-    margin-right: 20px;
+  .card-image {
+    width: 100%;
+    display: block;
+    margin: 0;
+    max-height: 250px;
+  }
+
+  .card-image img {
+    margin: 0;
   }
 
   .thanks {
@@ -411,10 +445,10 @@ Media Queries
   video {
     width: 100%;
    }
-}
 
-@media screen and (max-width: 1000px) {
-  .caption {
-    margin: 0 10px 0 10px;
+  #crystal-houseplant img {
+    width: 100%;
   }
 }
+
+
